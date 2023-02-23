@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Projeto_PSI
 {
-    internal class Player
+    public class Player
     {
         //----Atributes----
 
@@ -19,7 +19,7 @@ namespace Projeto_PSI
         public double experience = 0;
 
         //Health
-        public double health = 0;
+        public double health = 100;
         private int minHealth = 0;
         private int maxHealth = 100;
         
@@ -28,6 +28,9 @@ namespace Projeto_PSI
 
         //Currency
         public int money = 0;
+
+        //Location
+        public string location = "Wonderland";
 
         //----Constructor----
 

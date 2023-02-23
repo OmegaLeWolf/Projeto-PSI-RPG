@@ -19,6 +19,7 @@ namespace Projeto_PSI
             InitializeComponent();
         }
 
+        //New Game
         private void button1_Click(object sender, EventArgs e)
         {
             //Hides current form
@@ -40,9 +41,20 @@ namespace Projeto_PSI
                 Player newChar = new Player(charName);
 
                 //Creates new MainGame Object and Shows maingame form
-                MainGame maingame = new MainGame();
+                MainGame maingame = new MainGame(newChar);
                 maingame.Show();
             }
+        }
+
+        //Load Game
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
         }
     }
 }
