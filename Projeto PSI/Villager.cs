@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Projeto_PSI
 {
-    class Villager
+    public class Villager
     {
         //----Atributes----
 

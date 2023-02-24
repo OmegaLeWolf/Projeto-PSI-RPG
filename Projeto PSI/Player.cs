@@ -60,8 +60,18 @@ namespace Projeto_PSI
             }
         }
 
+        public void giveExperience(double experience)
+        {
+            this.experience += experience;
+        }
+
+        public double damageGiven()
+        {
+            return this.power * this.level * 0.5;
+        }
+
         //Checks player health
-        public bool checkHealth(double damage)
+        public bool checkHealth(double damage=0)
         {
             //Decreases health by given damage
             this.health -= damage;

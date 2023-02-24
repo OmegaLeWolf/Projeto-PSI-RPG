@@ -47,6 +47,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="attackMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="attackMenu.Designer.cs">
+      <DependentUpon>attackMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Enemy.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +76,9 @@
       <DependentUpon>showMap.cs</DependentUpon>
     </Compile>
     <Compile Include="Villager.cs" />
+    <EmbeddedResource Include="attackMenu.resx">
+      <DependentUpon>attackMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
