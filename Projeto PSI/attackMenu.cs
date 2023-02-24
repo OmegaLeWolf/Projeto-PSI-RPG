@@ -62,9 +62,17 @@ namespace Projeto_PSI
         private void cHeal_Click(object sender, EventArgs e)
         {
             //Check if potion is in inventory
-
-            //Use heal potion
-            player.takeHealPotion(20);
+            if (player.checkIfItemInInventory("Healing Potion"))
+            {
+                //Use healing potion
+                player.takeHealPotion(20);
+                MessageBox.Show("You used a healing potion and gained 20HP!", "Healing Potion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            //If not in inventory
+            else
+            {
+                MessageBox.Show("You do not have a healing potion!", "Healing Potion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }            
         }
     }
 }
