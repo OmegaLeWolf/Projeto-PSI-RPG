@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms.VisualStyles;
 
 namespace Projeto_PSI
 {
@@ -28,6 +29,9 @@ namespace Projeto_PSI
 
         //Currency
         public int money = 0;
+
+        //Inventory
+        public List<string> inventory = new List<string>(); 
 
         //Location
         public string location = "Wonderland";
@@ -90,11 +94,13 @@ namespace Projeto_PSI
 
         public double takeHealPotion(double heal)
         {
+            //Adds onto current health the heal value
             this.health += heal;
 
+            //If current health is more than max health, decreases to 100 to prevent to much health
             if (this.health > maxHealth)
             {
-                this.health -= this.health - maxHealth;
+                this.health = 100;
                 return this.health;
             }
             else
@@ -119,6 +125,12 @@ namespace Projeto_PSI
             }
         }
 
+        //Returns current health
+        public double checkHealth()
+        {
+            return this.health;
+        }
+
         //Returns current money
         public int checkMoney()
         {
@@ -135,6 +147,20 @@ namespace Projeto_PSI
         public double checkExperience()
         {
             return this.experience;
+        }
+
+        public bool checkIfItemInInventory(string item)
+        {
+            if (this.inventory.Contains(item))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public void addItemToInventory(string item)
+        {
+            inventory.Add(item);
         }
     }
 }
