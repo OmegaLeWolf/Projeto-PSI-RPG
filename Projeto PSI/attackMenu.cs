@@ -21,6 +21,12 @@ namespace Projeto_PSI
 
             player = character;
             enemy = enemychar;
+
+            cHealthText.Text = player.health.ToString();
+            cLevelText.Text = player.level.ToString();
+
+            eHealthText.Text = enemy.health.ToString();
+            eLevelText.Text = enemy.level.ToString();
         }
 
         //Attack enemy
@@ -29,9 +35,13 @@ namespace Projeto_PSI
             //Calculate how much to attack
             double damage = player.damageGiven();
 
+            MessageBox.Show($"Your hit did {damage} damage!", "You attack the enemy!");
+
             if (!enemy.checkEnemyHealth(damage))
             {
                 //Player wins
+
+                MessageBox.Show("You won this time..", "You won!");
 
                 //Gives player experience for killing enemy
                 player.giveExperience(enemy.level * 0.2);
@@ -46,6 +56,8 @@ namespace Projeto_PSI
             else
             {
                 double recDamage = enemy.enemyDamageGiven();
+
+                MessageBox.Show($"You lost {recDamage} HP!", "Enemy Attacks back!");
                 
                 if(!player.checkHealth(recDamage))
                 {
