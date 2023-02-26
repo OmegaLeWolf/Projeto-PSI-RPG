@@ -31,16 +31,18 @@
             this.enemyBox = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.eHealth = new System.Windows.Forms.Label();
-            this.cHealthText = new System.Windows.Forms.TextBox();
+            this.eHealthText = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.cLevelText = new System.Windows.Forms.TextBox();
             this.cLevel = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.cHealthText = new System.Windows.Forms.TextBox();
             this.cHealth = new System.Windows.Forms.Label();
             this.cAttack = new System.Windows.Forms.Button();
             this.cHeal = new System.Windows.Forms.Button();
             this.cEscape = new System.Windows.Forms.Button();
+            this.eLevelText = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.enemyBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -79,16 +81,16 @@
             this.eHealth.TabIndex = 19;
             this.eHealth.Text = "Enemy Health";
             // 
-            // cHealthText
+            // eHealthText
             // 
-            this.cHealthText.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.cHealthText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cHealthText.ForeColor = System.Drawing.Color.White;
-            this.cHealthText.Location = new System.Drawing.Point(453, 34);
-            this.cHealthText.Name = "cHealthText";
-            this.cHealthText.ReadOnly = true;
-            this.cHealthText.Size = new System.Drawing.Size(89, 22);
-            this.cHealthText.TabIndex = 20;
+            this.eHealthText.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.eHealthText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eHealthText.ForeColor = System.Drawing.Color.White;
+            this.eHealthText.Location = new System.Drawing.Point(453, 34);
+            this.eHealthText.Name = "eHealthText";
+            this.eHealthText.ReadOnly = true;
+            this.eHealthText.Size = new System.Drawing.Size(89, 22);
+            this.eHealthText.TabIndex = 20;
             // 
             // groupBox1
             // 
@@ -133,16 +135,16 @@
             this.cLevel.TabIndex = 17;
             this.cLevel.Text = "Level";
             // 
-            // textBox1
+            // cHealthText
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(404, 252);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(89, 22);
-            this.textBox1.TabIndex = 16;
+            this.cHealthText.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.cHealthText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cHealthText.ForeColor = System.Drawing.Color.White;
+            this.cHealthText.Location = new System.Drawing.Point(404, 252);
+            this.cHealthText.Name = "cHealthText";
+            this.cHealthText.ReadOnly = true;
+            this.cHealthText.Size = new System.Drawing.Size(89, 22);
+            this.cHealthText.TabIndex = 16;
             // 
             // cHealth
             // 
@@ -193,20 +195,44 @@
             this.cEscape.Text = "Run Away";
             this.cEscape.UseVisualStyleBackColor = false;
             // 
+            // eLevelText
+            // 
+            this.eLevelText.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.eLevelText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eLevelText.ForeColor = System.Drawing.Color.White;
+            this.eLevelText.Location = new System.Drawing.Point(453, 62);
+            this.eLevelText.Name = "eLevelText";
+            this.eLevelText.ReadOnly = true;
+            this.eLevelText.Size = new System.Drawing.Size(89, 22);
+            this.eLevelText.TabIndex = 25;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(331, 65);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(96, 16);
+            this.label1.TabIndex = 24;
+            this.label1.Text = "Enemy Level";
+            // 
             // attackMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.eLevelText);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.cEscape);
             this.Controls.Add(this.cHeal);
             this.Controls.Add(this.cAttack);
             this.Controls.Add(this.cLevelText);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.cLevel);
+            this.Controls.Add(this.eHealthText);
             this.Controls.Add(this.cHealthText);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.eHealth);
             this.Controls.Add(this.cHealth);
             this.Controls.Add(this.enemyBox);
@@ -226,15 +252,17 @@
         private System.Windows.Forms.GroupBox enemyBox;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label eHealth;
-        private System.Windows.Forms.TextBox cHealthText;
+        private System.Windows.Forms.TextBox eHealthText;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.TextBox cLevelText;
         private System.Windows.Forms.Label cLevel;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox cHealthText;
         private System.Windows.Forms.Label cHealth;
         private System.Windows.Forms.Button cAttack;
         private System.Windows.Forms.Button cHeal;
         private System.Windows.Forms.Button cEscape;
+        private System.Windows.Forms.TextBox eLevelText;
+        private System.Windows.Forms.Label label1;
     }
 }
