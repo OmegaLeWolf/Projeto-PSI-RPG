@@ -8,6 +8,6 @@ namespace Projeto_PSI
 {
     public class CowardIslandEnemy:Enemy
     {
-
+        string imgAppearance = "./CowardEnemy.jpg";
     }
 }

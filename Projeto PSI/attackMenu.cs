@@ -27,6 +27,7 @@ namespace Projeto_PSI
 
             eHealthText.Text = enemy.health.ToString();
             eLevelText.Text = enemy.level.ToString();
+            pictureBox1.ImageLocation = "./CowardEnemy.jpg";
         }
 
         //Attack enemy
