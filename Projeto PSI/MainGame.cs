@@ -16,6 +16,7 @@ namespace Projeto_PSI
     {
         private bool inventoryToggled = false;
         internal Player charObj;
+
         public MainGame(Player character)
         {
             InitializeComponent();
@@ -28,8 +29,29 @@ namespace Projeto_PSI
             cHealthText.Text = character.health.ToString();
             cLevelText.Text = character.level.ToString();
 
+            currentMapArea.Text = character.location;
+
             //Creating a charObj instance to use in other methods
             charObj = character;
+
+            Thread updatePlayerValues = new Thread(updatePlayer);
+
+            updatePlayerValues.Start();
+        }
+
+        public void updatePlayer()
+        {
+            Thread.Sleep(1000);
+
+            //Window title displays player name
+            this.Text = charObj.name;
+
+            //Setting values for textboxes
+            cNameText.Text = charObj.name;
+            cHealthText.Text = charObj.health.ToString();
+            cLevelText.Text = charObj.level.ToString();
+
+
         }
 
     //Toggles Inventory visibility by adjusting the width of the form
@@ -64,6 +86,35 @@ namespace Projeto_PSI
             //Opens form to display map in a larger screen
             showMap displayMap = new showMap(charObj.location);
             displayMap.Show();
+        }
+
+        private void inspectArea_Click(object sender, EventArgs e)
+        {
+            Random random = new Random();
+
+            int chance = random.Next(1, 3);
+
+            //If random number generates a 1
+            if (chance == 1 && charObj.location != "Wonderland")
+            {
+                //Creates enemy based on player's current location
+
+                if (charObj.location == "Dark Forest")
+                {
+                    Enemy enemy = new Enemy();
+                    attackMenu genAttack = new attackMenu(charObj, enemy);
+                }
+                else if (charObj.location == "Coward Island")
+                {
+                    Enemy enemy = new Enemy();
+                    attackMenu genAttack = new attackMenu(charObj, enemy);
+                }
+
+            }
+            else if (chance == 2 || charObj.location == "Wonderland")
+            {
+                MessageBox.Show("You encountered a local trader, he offers to show you his stock.", "Trading");
+            }
         }
     }
 }

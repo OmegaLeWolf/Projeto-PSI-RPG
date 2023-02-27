@@ -8,6 +8,6 @@ namespace Projeto_PSI
 {
     public class DarkForestEnemy
     {
-
+        string imgAppearance = "./CowardEnemy.jpg";
     }
 }

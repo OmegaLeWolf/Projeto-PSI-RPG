@@ -43,6 +43,7 @@
             this.currentMapArea = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.travelBtn = new System.Windows.Forms.Button();
+            this.inspectArea = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.inventoryBox.SuspendLayout();
             this.mapBox.SuspendLayout();
@@ -209,12 +210,25 @@
             this.travelBtn.BackColor = System.Drawing.Color.Gray;
             this.travelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.travelBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.travelBtn.Location = new System.Drawing.Point(393, 100);
+            this.travelBtn.Location = new System.Drawing.Point(393, 155);
             this.travelBtn.Name = "travelBtn";
             this.travelBtn.Size = new System.Drawing.Size(133, 56);
             this.travelBtn.TabIndex = 20;
             this.travelBtn.Text = "Travel to a new location";
             this.travelBtn.UseVisualStyleBackColor = false;
+            // 
+            // inspectArea
+            // 
+            this.inspectArea.BackColor = System.Drawing.Color.Gray;
+            this.inspectArea.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.inspectArea.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.inspectArea.Location = new System.Drawing.Point(393, 93);
+            this.inspectArea.Name = "inspectArea";
+            this.inspectArea.Size = new System.Drawing.Size(133, 56);
+            this.inspectArea.TabIndex = 21;
+            this.inspectArea.Text = "Inspect area";
+            this.inspectArea.UseVisualStyleBackColor = false;
+            this.inspectArea.Click += new System.EventHandler(this.inspectArea_Click);
             // 
             // MainGame
             // 
@@ -222,6 +236,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(544, 528);
+            this.Controls.Add(this.inspectArea);
             this.Controls.Add(this.travelBtn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.currentMapArea);
@@ -263,5 +278,6 @@
         private System.Windows.Forms.Label currentMapArea;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button travelBtn;
+        private System.Windows.Forms.Button inspectArea;
     }
 }

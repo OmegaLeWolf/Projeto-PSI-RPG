@@ -77,6 +77,12 @@
     <Compile Include="showMap.Designer.cs">
       <DependentUpon>showMap.cs</DependentUpon>
     </Compile>
+    <Compile Include="Trading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trading.Designer.cs">
+      <DependentUpon>Trading.cs</DependentUpon>
+    </Compile>
     <Compile Include="Villager.cs" />
     <EmbeddedResource Include="attackMenu.resx">
       <DependentUpon>attackMenu.cs</DependentUpon>
@@ -98,6 +104,9 @@
     </Compile>
     <EmbeddedResource Include="showMap.resx">
       <DependentUpon>showMap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Trading.resx">
+      <DependentUpon>Trading.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
