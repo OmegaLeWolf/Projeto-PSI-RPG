@@ -71,7 +71,7 @@ namespace Projeto_PSI
 
         public double damageGiven()
         {
-            return this.power * this.level * 0.5;
+            return this.power * this.level * 20;
         }
 
         //Checks player health
@@ -161,6 +161,11 @@ namespace Projeto_PSI
         public void addItemToInventory(string item)
         {
             inventory.Add(item);
+        }
+
+        public void remItemFromInventory(string item)
+        {
+            inventory.Remove(item);
         }
     }
 }

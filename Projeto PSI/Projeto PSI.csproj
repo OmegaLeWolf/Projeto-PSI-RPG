@@ -56,6 +56,7 @@
     <Compile Include="CowardIslandEnemy.cs" />
     <Compile Include="DarkForestEnemy.cs" />
     <Compile Include="Enemy.cs" />
+    <Compile Include="expensiveTrader.cs" />
     <Compile Include="MainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,11 +78,18 @@
     <Compile Include="showMap.Designer.cs">
       <DependentUpon>showMap.cs</DependentUpon>
     </Compile>
+    <Compile Include="Trader.cs" />
     <Compile Include="Trading.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Trading.Designer.cs">
       <DependentUpon>Trading.cs</DependentUpon>
+    </Compile>
+    <Compile Include="travelMap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="travelMap.Designer.cs">
+      <DependentUpon>travelMap.cs</DependentUpon>
     </Compile>
     <Compile Include="Villager.cs" />
     <EmbeddedResource Include="attackMenu.resx">
@@ -108,6 +116,10 @@
     <EmbeddedResource Include="Trading.resx">
       <DependentUpon>Trading.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="travelMap.resx">
+      <DependentUpon>travelMap.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
