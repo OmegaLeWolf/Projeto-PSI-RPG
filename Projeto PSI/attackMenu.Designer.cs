@@ -194,6 +194,7 @@
             this.cEscape.TabIndex = 23;
             this.cEscape.Text = "Run Away";
             this.cEscape.UseVisualStyleBackColor = false;
+            this.cEscape.Click += new System.EventHandler(this.cEscape_Click);
             // 
             // eLevelText
             // 
@@ -238,6 +239,7 @@
             this.Controls.Add(this.enemyBox);
             this.Name = "attackMenu";
             this.Text = "attackMenu";
+            this.Load += new System.EventHandler(this.attackMenu_Load);
             this.enemyBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);

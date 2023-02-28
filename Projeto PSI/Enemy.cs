@@ -28,7 +28,7 @@ namespace Projeto_PSI
             this.health -= damage;
 
             //If health is less than minimum health, returns false (enemy dies)
-            if (this.health < minHealth)
+            if (this.health <= minHealth)
             {
                 return false;
             }

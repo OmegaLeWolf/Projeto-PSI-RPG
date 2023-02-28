@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Projeto_PSI
 {
@@ -14,10 +15,13 @@ namespace Projeto_PSI
     {
         public Player player;
         public Enemy enemy;
+        private System.Threading.Timer timer;
+
 
         public attackMenu(Player character, Enemy enemychar)
         {
             InitializeComponent();
+
 
             player = character;
             enemy = enemychar;
@@ -30,11 +34,43 @@ namespace Projeto_PSI
             pictureBox1.ImageLocation = "./CowardEnemy.jpg";
         }
 
+        void UpdateTextBox(object state)
+        {
+            Player charObj = player;
+        
+            cHealthText.Invoke(new Action(() =>
+            {
+                cHealthText.Text = charObj.health.ToString();
+            }));
+            cLevelText.Invoke(new Action(() =>
+            {
+                cLevelText.Text = charObj.level.ToString();
+            }));
+            eHealthText.Invoke(new Action(() =>
+            {
+                eHealthText.Text = enemy.health.ToString();
+            }));
+            eLevelText.Invoke(new Action(() =>
+            {
+                eLevelText.Text = enemy.level.ToString();
+            }));
+
+        }
+
         //Attack enemy
         private void cAttack_Click(object sender, EventArgs e)
         {
+            double damage = 0;
+            //Check if player has a sword
+            if (player.checkIfItemInInventory("Sword"))
+            {
+                damage = player.damageGiven() + 10;
+            }
+            else
+            {
+                damage = player.damageGiven();
+            }
             //Calculate how much to attack
-            double damage = player.damageGiven();
 
             MessageBox.Show($"Your hit did {damage} damage!", "You attack the enemy!");
 
@@ -45,7 +81,8 @@ namespace Projeto_PSI
                 MessageBox.Show("You won this time..", "You won!");
 
                 //Gives player experience for killing enemy
-                player.giveExperience(enemy.level * 0.2);
+                player.giveExperience(enemy.level * 2);
+                player.money += 100;
                 //Checks if player is eligible for levelup
                 int level = player.levelUp();
                 //If is eligible
@@ -53,6 +90,8 @@ namespace Projeto_PSI
                 {
                     MessageBox.Show("You gained a level! You are now level " + level, "Congratulations!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+                timer.Dispose();
+                this.Close();
             }
             else
             {
@@ -67,6 +106,9 @@ namespace Projeto_PSI
                     MessageBox.Show("Your adventure ends here. Game Over.", "Game Over.");
                     //Resets player location back to start
                     player.location = "Wonderland";
+
+                    timer.Dispose();
+                    this.Close();
                 }
             }
             //Else match continues
@@ -79,6 +121,9 @@ namespace Projeto_PSI
             {
                 //Use healing potion
                 player.takeHealPotion(20);
+
+                player.remItemFromInventory("Healing Potion");
+
                 MessageBox.Show("You used a healing potion and gained 20HP!", "Healing Potion", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             //If not in inventory
@@ -86,6 +131,19 @@ namespace Projeto_PSI
             {
                 MessageBox.Show("You do not have a healing potion!", "Healing Potion", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }            
+        }
+
+        private void cEscape_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("You managed to get away!", "You got away!");
+            timer.Dispose();
+            this.Close();
+        }
+
+        private void attackMenu_Load(object sender, EventArgs e)
+        {
+            timer = new System.Threading.Timer(UpdateTextBox, null, 0, 1000);
+
         }
     }
 }
