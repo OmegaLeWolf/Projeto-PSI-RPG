@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
-
+using System.Data.SqlClient;
 using System.Net.NetworkInformation;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
@@ -44,7 +44,16 @@ namespace Projeto_PSI
             //Creating a charObj instance to use in other methods
             charObj = character;
 
-            
+            //Connecting to database
+            SqlConnection con = new SqlConnection
+                (
+                "server=localhost;" +
+                "database=projeto_psi_rpg;" +
+                "UID=root;" +
+                "password=;"
+                );
+
+
         }
         void UpdateTextBox(object state)
         {
@@ -76,6 +85,12 @@ namespace Projeto_PSI
             cMoneyText.Invoke(new Action(() =>
             {
                 cMoneyText.Text = charObj.money.ToString();
+            }));
+            dataGridView1.Invoke(new Action(() =>
+            {
+                DataSet ds = new DataSet();
+                dataGridView1.DataSource = ds;
+                dataGridView1.DataMember = "table name";
             }));
         }
 
