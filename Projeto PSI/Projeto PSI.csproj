@@ -53,6 +53,7 @@
     <Compile Include="attackMenu.Designer.cs">
       <DependentUpon>attackMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="cheapTrader.cs" />
     <Compile Include="CowardIslandEnemy.cs" />
     <Compile Include="DarkForestEnemy.cs" />
     <Compile Include="Enemy.cs" />

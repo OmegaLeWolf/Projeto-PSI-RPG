@@ -9,8 +9,17 @@ namespace Projeto_PSI
 {
     public class Trader: Villager
     {
-        int swordPrice = 5999;
-        int healingPrice = 199;
-        int amuletPrice = 149000;
+        public int swordPrice = 5000;
+        public int healingPrice = 100;
+        public int amuletPrice = 100000;
+
+        private string returnName()
+        {
+            return this.name;
+        }
+        private string returnLevel()
+        {
+            return this.level.ToString();
+        }
     }
 }

@@ -15,23 +15,24 @@ namespace Projeto_PSI
     {
         public Player player;
         public Enemy enemy;
+        public Dictionary<string, int> updatedInventory;
         private System.Threading.Timer timer;
 
 
-        public attackMenu(Player character, Enemy enemychar)
+        public attackMenu(Player character, Enemy enemychar, Dictionary<string, int> inventory)
         {
             InitializeComponent();
 
 
             player = character;
             enemy = enemychar;
+            updatedInventory = inventory;
 
             cHealthText.Text = player.health.ToString();
             cLevelText.Text = player.level.ToString();
 
             eHealthText.Text = enemy.health.ToString();
             eLevelText.Text = enemy.level.ToString();
-            pictureBox1.ImageLocation = "./CowardEnemy.jpg";
         }
 
         void UpdateTextBox(object state)
@@ -95,7 +96,12 @@ namespace Projeto_PSI
             }
             else
             {
-                double recDamage = enemy.enemyDamageGiven();
+                Random random = new Random();
+
+                int chance = random.Next(1, 30);
+
+                double recDamage = enemy.enemyDamageGiven() + chance;
+
 
                 MessageBox.Show($"You lost {recDamage} HP!", "Enemy Attacks back!");
                 
@@ -106,7 +112,7 @@ namespace Projeto_PSI
                     MessageBox.Show("Your adventure ends here. Game Over.", "Game Over.");
                     //Resets player location back to start
                     player.location = "Wonderland";
-
+                    player.health = 100;
                     timer.Dispose();
                     this.Close();
                 }
@@ -117,14 +123,21 @@ namespace Projeto_PSI
         private void cHeal_Click(object sender, EventArgs e)
         {
             //Check if potion is in inventory
-            if (player.checkIfItemInInventory("Healing Potion"))
+            if (updatedInventory.ContainsKey("Healing Potion"))
             {
-                //Use healing potion
-                player.takeHealPotion(20);
+                if (updatedInventory["Healing Potion"] > 0)
+                {
+                    //Use healing potion
+                    player.takeHealPotion(20);
 
-                player.remItemFromInventory("Healing Potion");
+                    MessageBox.Show("You used a healing potion and gained 20HP!", "Healing Potion", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                MessageBox.Show("You used a healing potion and gained 20HP!", "Healing Potion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    updatedInventory["Healing Potion"] -= 1;
+                }
+                else
+                {
+                    MessageBox.Show("You do not have a healing potion!", "Healing Potion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             //If not in inventory
             else

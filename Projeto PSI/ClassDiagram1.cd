@@ -1,21 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Projeto_PSI.Enemy">
-    <Position X="5.75" Y="3.25" Width="1.5" />
+    <Position X="6.75" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAJAAAAAAAAAAAAAAACAEEAAAAAAAAAAAAAACg=</HashCode>
       <FileName>Enemy.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Projeto_PSI.DarkForestEnemy">
-    <Position X="7.75" Y="6.5" Width="1.5" />
+    <Position X="8.25" Y="6.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>DarkForestEnemy.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Projeto_PSI.CowardIslandEnemy">
-    <Position X="4" Y="6.5" Width="1.5" />
+    <Position X="5.5" Y="6.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>CowardIslandEnemy.cs</FileName>
@@ -36,10 +36,24 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Projeto_PSI.Villager">
-    <Position X="3.75" Y="0.5" Width="1.5" />
+    <Position X="6.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAEEAAAAAABAAAAAAgA=</HashCode>
       <FileName>Villager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Projeto_PSI.expensiveTrader">
+    <Position X="0.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAACAAAAAAAAACAAEAAAAAAA=</HashCode>
+      <FileName>expensiveTrader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Projeto_PSI.cheapTrader">
+    <Position X="2.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAACAAAAAAAAACAAEAAAAAAA=</HashCode>
+      <FileName>cheapTrader.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
