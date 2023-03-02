@@ -73,7 +73,6 @@
             this.eHealthText.ReadOnly = true;
             this.eHealthText.Size = new System.Drawing.Size(102, 22);
             this.eHealthText.TabIndex = 22;
-            this.eHealthText.Text = "100";
             this.eHealthText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // healingBuy
@@ -112,7 +111,6 @@
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(102, 22);
             this.textBox1.TabIndex = 26;
-            this.textBox1.Text = "5000";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label2
@@ -136,7 +134,6 @@
             this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(102, 22);
             this.textBox2.TabIndex = 28;
-            this.textBox2.Text = "100000";
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label3
@@ -195,6 +192,7 @@
             this.Controls.Add(this.eHealth);
             this.Name = "Trading";
             this.Text = "Trading";
+            this.Load += new System.EventHandler(this.Trading_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -17,5 +17,14 @@ namespace Projeto_PSI
         //Level
         public int level = 1;
         public double experience = 0;
+
+        private string returnName()
+        {
+            return this.name;
+        }
+        private string returnLevel()
+        {
+            return this.level.ToString();
+        }
     }
 }

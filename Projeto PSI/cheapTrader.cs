@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace Projeto_PSI
 {
-    public class CowardIslandEnemy:Enemy
+    public class cheapTrader:Trader
     {
-        string imgAppearance = "./CowardEnemy.jpg";
+        public int swordPrice = 5000;
+        public int healingPrice = 100;
+        public int amuletPrice = 100000;
 
         private string returnName()
         {

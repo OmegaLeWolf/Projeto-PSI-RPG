@@ -7,7 +7,7 @@ using System.Windows.Forms.VisualStyles;
 
 namespace Projeto_PSI
 {
-    public class Player
+    public class Player:Villager
     {
         //----Atributes----
 

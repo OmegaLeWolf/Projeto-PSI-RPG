@@ -20,6 +20,8 @@ namespace Projeto_PSI
         private bool inventoryToggled = false;
         internal Player charObj;
         private System.Threading.Timer timer;
+        public Dictionary<string, int> updatedInventory = new Dictionary<string, int>();
+        private Player extraPlayer = new Player("player2");
 
 
         public MainGame(Player character)
@@ -28,6 +30,7 @@ namespace Projeto_PSI
 
             //Initializes timer thread to run UpdateTextBox() every 1000 seconds
             timer = new System.Threading.Timer(UpdateTextBox, null, 0, 1000);
+
 
             //Window title displays player name
             this.Text = character.name;
@@ -45,6 +48,7 @@ namespace Projeto_PSI
             charObj = character;
 
             //Connecting to database
+            /*
             SqlConnection con = new SqlConnection
                 (
                 "server=localhost;" +
@@ -52,7 +56,9 @@ namespace Projeto_PSI
                 "UID=root;" +
                 "password=;"
                 );
+            */
 
+            
 
         }
         void UpdateTextBox(object state)
@@ -88,10 +94,34 @@ namespace Projeto_PSI
             }));
             dataGridView1.Invoke(new Action(() =>
             {
-                DataSet ds = new DataSet();
-                dataGridView1.DataSource = ds;
-                dataGridView1.DataMember = "table name";
+                //Update inventory
+                dataGridView1.ForeColor = Color.Black;
+
+                dataGridView1.ColumnCount = charObj.inventory.Count();
+                int x = 0;
+                dataGridView1.RowCount = 2;
+                for (int i = 0; i < charObj.inventory.Count(); i++)
+                {
+                    if (updatedInventory.ContainsKey(charObj.inventory[i]))
+                    {
+                        updatedInventory[charObj.inventory[i]] = updatedInventory[charObj.inventory[i]] + 1;
+                        charObj.inventory.Remove(charObj.inventory[i]);
+                    }
+                    else
+                    {
+                        updatedInventory.Add(charObj.inventory[i], 1);
+                        charObj.inventory.Remove(charObj.inventory[i]);
+                    }
+
+                }
+                for (int i = 0; i < updatedInventory.Count(); i++)
+                {
+                    dataGridView1.Columns[x].Name = updatedInventory.ElementAt(i).Key;
+                    dataGridView1.Rows.Add(updatedInventory.ElementAt(i).Value.ToString());
+                    x++;
+                }
             }));
+            
         }
 
         //Toggles Inventory visibility by adjusting the width of the form
@@ -143,13 +173,13 @@ namespace Projeto_PSI
                 if (charObj.location == "Dark Forest")
                 {
                     Enemy enemy = new Enemy();
-                    attackMenu genAttack = new attackMenu(charObj, enemy);
+                    attackMenu genAttack = new attackMenu(charObj, enemy, updatedInventory);
                     genAttack.Show();
                 }
                 else if (charObj.location == "Coward Island")
                 {
                     Enemy enemy = new Enemy();
-                    attackMenu genAttack = new attackMenu(charObj, enemy);
+                    attackMenu genAttack = new attackMenu(charObj, enemy, updatedInventory);
                     genAttack.Show();
 
                 }

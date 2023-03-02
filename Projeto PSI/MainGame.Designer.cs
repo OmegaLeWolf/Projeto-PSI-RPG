@@ -158,6 +158,7 @@
             // 
             this.inventoryBox.Controls.Add(this.dataGridView1);
             this.inventoryBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inventoryBox.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.inventoryBox.Location = new System.Drawing.Point(561, 31);
             this.inventoryBox.Name = "inventoryBox";
             this.inventoryBox.Size = new System.Drawing.Size(413, 485);
@@ -168,6 +169,7 @@
             // mapBox
             // 
             this.mapBox.Controls.Add(this.pictureBox1);
+            this.mapBox.Enabled = false;
             this.mapBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mapBox.ForeColor = System.Drawing.Color.White;
             this.mapBox.Location = new System.Drawing.Point(25, 258);
@@ -176,6 +178,7 @@
             this.mapBox.TabIndex = 17;
             this.mapBox.TabStop = false;
             this.mapBox.Text = "Map";
+            this.mapBox.Visible = false;
             // 
             // pictureBox1
             // 
@@ -284,7 +287,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(988, 528);
+            this.ClientSize = new System.Drawing.Size(539, 528);
             this.Controls.Add(this.cMoneyText);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cXPText);

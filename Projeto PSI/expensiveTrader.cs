@@ -9,6 +9,17 @@ namespace Projeto_PSI
 {
     public class expensiveTrader:Trader 
     {
-        
+        public int swordPrice = 5999;
+        public int healingPrice = 199;
+        public int amuletPrice = 149000;
+
+        private string returnName()
+        {
+            return this.name;
+        }
+        private string returnLevel()
+        {
+            return this.level.ToString();
+        }
     }
 }
